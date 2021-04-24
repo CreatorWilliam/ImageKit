@@ -60,10 +60,10 @@ public extension UIImageView {
     
     var options: KingfisherOptionsInfo?
     if isForceRefresh == true { options = [.forceRefresh] }
-    self.kf.setImage(with: imageURL, placeholder: placeholder, options: options) { (image, error, _, url) in
+    self.kf.setImage(with: imageURL, placeholder: placeholder, options: options, completionHandler:  { (image, error, _, url) in
       
       completionHandler(image)
-    }
+    })
   }
   
 }
